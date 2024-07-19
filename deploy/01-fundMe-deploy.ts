@@ -8,7 +8,8 @@ const  deployFunc = async (hre: HardhatRuntimeEnvironment) => {
     const {getNamedAccounts, deployments} = hre
     const {deploy, log} = deployments
     const {deployer} = await getNamedAccounts()
-    const chainId: keyof typeof networkConfig | undefined = network.config.chainId as keyof typeof networkConfig;
+    console.log("getting chainId")
+    const chainId: keyof typeof networkConfig | undefined =  network.config.chainId as keyof typeof networkConfig;
     
     // const ethUsdPriceFeedAddress = networkConfig[chainId].ethUsdPriceFeed
 
@@ -26,6 +27,7 @@ if(developmentChains.includes(network.name)){
         from: deployer,
         args: [ethUsdPriceFeedAddress],
         log: true,
+        waitConfirmations: 6
 
     })
 

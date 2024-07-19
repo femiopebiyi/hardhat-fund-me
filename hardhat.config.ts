@@ -1,6 +1,7 @@
 import type { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox-viem";
 import "hardhat-deploy"
+import "dotenv/config"
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -8,8 +9,9 @@ const config: HardhatUserConfig = {
   },
   networks: {
     sepolia: {
-      url: "",
-      accounts: []
+      url: process.env.SEPOLIA_RPC_URL,
+      accounts: [process.env.SEPOLIA_PRIVATE_KEY!],
+      chainId: 11155111
     }
   },
   namedAccounts: {
