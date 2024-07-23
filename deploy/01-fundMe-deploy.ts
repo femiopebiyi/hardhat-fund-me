@@ -10,7 +10,7 @@ const  deployFunc = async (hre: HardhatRuntimeEnvironment) => {
     const {deployer} = await getNamedAccounts()
     console.log("getting chainId")
     const chainId: keyof typeof networkConfig | undefined =  network.config.chainId as keyof typeof networkConfig;
-    
+    console.log(chainId)
     // const ethUsdPriceFeedAddress = networkConfig[chainId].ethUsdPriceFeed
 
 let ethUsdPriceFeedAddress;

@@ -3,10 +3,17 @@ import "@nomicfoundation/hardhat-toolbox-viem";
 import "hardhat-deploy"
 import "dotenv/config"
 
+import '@nomicfoundation/hardhat-ethers'
+import '@nomicfoundation/hardhat-chai-matchers'
+import "typechain"
+
+
 const config: HardhatUserConfig = {
   solidity: {
     compilers: [{version: "0.8.8"}, {version: "0.8.0"}]
   },
+  
+
   networks: {
     sepolia: {
       url: process.env.SEPOLIA_RPC_URL,
