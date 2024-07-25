@@ -13,7 +13,7 @@ describe("FundMe", function () {
     let mockV3Aggregator: any;
 
     beforeEach(async function () {
-        this.timeout(60000); // Increase timeout to 60 seconds
+        this.timeout(10000); // Increase timeout to 60 seconds
 
         deployer = (await getNamedAccounts()).deployer;
         
